@@ -1,3 +1,46 @@
-@import './fonts.css';
-@import './tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import './theme.css';
+@import './globals.css';
+@import './fonts.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--soft-background);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+}
+
+p {
+  line-height: 1.7;
+}
