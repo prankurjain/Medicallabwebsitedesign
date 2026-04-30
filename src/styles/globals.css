@@ -1,0 +1,92 @@
+/* Global styles for PATHKIND LAB Angular App */
+
+:root {
+  --font-size: 16px;
+
+  /* PATHKIND LAB Color Palette */
+  --primary-blue: #1A6FBF;
+  --dark-navy: #0D2B4E;
+  --teal-accent: #00BFA5;
+  --soft-background: #F4F8FC;
+  --card-white: #FFFFFF;
+  --border-color: #E0ECF8;
+  --text-primary: #1A2B3C;
+  --text-secondary: #5A7A99;
+  --error-red: #E53935;
+  --success-green: #2E7D32;
+  --warning-amber: #F59E0B;
+  --whatsapp-green: #25D366;
+
+  /* Status Colors */
+  --status-booked-bg: #E3F2FD;
+  --status-booked-text: #1565C0;
+  --status-collected-bg: #FFF3E0;
+  --status-collected-text: #E65100;
+  --status-processing-bg: #F3E5F5;
+  --status-processing-text: #6A1B9A;
+  --status-ready-bg: #E8F5E9;
+  --status-ready-text: #1B5E20;
+  --status-completed-bg: #F5F5F5;
+  --status-completed-text: #616161;
+
+  /* Soft Blue-White */
+  --soft-blue-white: #B8D4F0;
+
+  /* Badge Backgrounds */
+  --badge-bg: #E8F4FC;
+  --prep-bg: #FFF8E1;
+  --savings-bg: #E8F5E9;
+
+  /* Font Families */
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  /* Status Colors */
+  --background: var(--soft-background);
+  --foreground: var(--text-primary);
+  --card: var(--card-white);
+  --card-foreground: var(--text-primary);
+  --popover: var(--card-white);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--primary-blue);
+  --primary-foreground: #ffffff;
+  --secondary: var(--text-secondary);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--badge-bg);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--teal-accent);
+  --accent-foreground: #ffffff;
+  --destructive: var(--error-red);
+  --destructive-foreground: #ffffff;
+  --border: var(--border-color);
+  --input: transparent;
+  --input-background: var(--card-white);
+  --switch-background: var(--border-color);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--primary-blue);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+}
