@@ -1,7 +1,9 @@
 import { MessageCircle } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 interface PackageCardProps {
+  id: string;
   name: string;
   category: string;
   sampleType: string;
@@ -15,6 +17,7 @@ interface PackageCardProps {
 }
 
 export function PackageCard({
+  id,
   name,
   category,
   sampleType,
@@ -27,6 +30,7 @@ export function PackageCard({
   imageUrl,
 }: PackageCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
   const savings = originalPrice ? originalPrice - price : 0;
 
   const getTagColor = () => {
@@ -44,6 +48,7 @@ export function PackageCard({
 
   return (
     <div
+      onClick={() => navigate(`/packages/${id}`)}
       className="bg-white overflow-hidden transition-all duration-200 cursor-pointer relative"
       style={{
         minHeight: '380px',

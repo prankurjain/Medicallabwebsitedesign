@@ -1,7 +1,9 @@
 import { MessageCircle } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 interface TestCardProps {
+  id: string;
   name: string;
   category: string;
   sampleType: string;
@@ -12,6 +14,7 @@ interface TestCardProps {
 }
 
 export function TestCard({
+  id,
   name,
   category,
   sampleType,
@@ -21,10 +24,12 @@ export function TestCard({
   imageUrl,
 }: TestCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
   const savings = originalPrice ? originalPrice - price : 0;
 
   return (
     <div
+      onClick={() => navigate(`/tests/${id}`)}
       className="bg-white overflow-hidden transition-all duration-200 cursor-pointer"
       style={{
         height: '340px',
