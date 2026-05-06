@@ -1,5 +1,6 @@
 import { Plus, Edit, Trash2 } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const tests = [
   {
@@ -47,6 +48,7 @@ const tests = [
 ];
 
 export function AdminTests() {
+  const navigate = useNavigate();
   const [testList] = useState(tests);
 
   return (
@@ -75,6 +77,7 @@ export function AdminTests() {
         </div>
 
         <button
+          onClick={() => navigate('/admin/tests/new')}
           className="flex items-center gap-2 px-4 transition-all duration-200 hover:opacity-90"
           style={{
             height: '44px',
@@ -256,6 +259,7 @@ export function AdminTests() {
                   <td className="px-6 py-4">
                     <div className="flex items-center justify-center gap-2">
                       <button
+                        onClick={() => navigate(`/admin/tests/edit/${test.id}`)}
                         className="p-2 rounded-lg transition-all duration-200 hover:bg-blue-50"
                         style={{
                           color: 'var(--primary-blue)',

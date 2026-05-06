@@ -122,6 +122,21 @@ export function AdminDashboard() {
             Add Test
           </Link>
           <Link
+            to="/admin/packages/new"
+            className="flex items-center gap-2 px-4 py-2 transition-all duration-200 hover:opacity-90"
+            style={{
+              backgroundColor: 'var(--success-green)',
+              color: 'white',
+              borderRadius: '8px',
+              fontSize: '14px',
+              fontWeight: '600',
+              textDecoration: 'none',
+            }}
+          >
+            <Plus size={18} />
+            Add Package
+          </Link>
+          <Link
             to="/admin/bookings/new"
             className="flex items-center gap-2 px-4 py-2 transition-all duration-200 hover:opacity-90"
             style={{

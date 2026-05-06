@@ -13,7 +13,11 @@ import { AdminTests } from './pages/admin/AdminTests';
 import { AdminPackages } from './pages/admin/AdminPackages';
 import { AdminBookings } from './pages/admin/AdminBookings';
 import { AddTest } from './pages/AddTest';
+import { AddPackage } from './pages/AddPackage';
 import { AddBooking } from './pages/AddBooking';
+import { EditTest } from './pages/EditTest';
+import { EditPackage } from './pages/EditPackage';
+import { EditBooking } from './pages/EditBooking';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
@@ -43,9 +47,13 @@ export const router = createBrowserRouter([
       { index: true, Component: AdminDashboard },
       { path: 'tests', Component: AdminTests },
       { path: 'tests/new', Component: AddTest },
+      { path: 'tests/edit/:testId', Component: EditTest },
       { path: 'packages', Component: AdminPackages },
+      { path: 'packages/new', Component: AddPackage },
+      { path: 'packages/edit/:packageId', Component: EditPackage },
       { path: 'bookings', Component: AdminBookings },
       { path: 'bookings/new', Component: AddBooking },
+      { path: 'bookings/edit/:bookingId', Component: EditBooking },
     ],
   },
 ]);

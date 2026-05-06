@@ -1,5 +1,6 @@
 import { Plus, Edit, Trash2 } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const packages = [
   {
@@ -37,6 +38,7 @@ const packages = [
 ];
 
 export function AdminPackages() {
+  const navigate = useNavigate();
   const [packageList] = useState(packages);
 
   return (
@@ -65,6 +67,7 @@ export function AdminPackages() {
         </div>
 
         <button
+          onClick={() => navigate('/admin/packages/new')}
           className="flex items-center gap-2 px-4 transition-all duration-200 hover:opacity-90"
           style={{
             height: '44px',
@@ -269,6 +272,7 @@ export function AdminPackages() {
                   <td className="px-6 py-4">
                     <div className="flex items-center justify-center gap-2">
                       <button
+                        onClick={() => navigate(`/admin/packages/edit/${pkg.id}`)}
                         className="p-2 rounded-lg transition-all duration-200 hover:bg-blue-50"
                         style={{
                           color: 'var(--primary-blue)',

@@ -1,5 +1,6 @@
-import { Eye } from 'lucide-react';
+import { Eye, Plus } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const bookings = [
   {
@@ -62,6 +63,7 @@ const getStatusColor = (status: string) => {
 };
 
 export function AdminBookings() {
+  const navigate = useNavigate();
   const [bookingList] = useState(bookings);
   const [filter, setFilter] = useState('All');
 
@@ -75,25 +77,43 @@ export function AdminBookings() {
   return (
     <div className="p-6 md:p-8 space-y-6">
       {/* Header */}
-      <div>
-        <h1
+      <div className="flex items-center justify-between">
+        <div>
+          <h1
+            style={{
+              fontSize: '28px',
+              fontWeight: '700',
+              color: 'var(--dark-navy)',
+              marginBottom: '4px',
+            }}
+          >
+            Manage Bookings
+          </h1>
+          <p
+            style={{
+              fontSize: '14px',
+              color: 'var(--text-secondary)',
+            }}
+          >
+            View and manage all test bookings
+          </p>
+        </div>
+
+        <button
+          onClick={() => navigate('/admin/bookings/new')}
+          className="flex items-center gap-2 px-4 transition-all duration-200 hover:opacity-90"
           style={{
-            fontSize: '28px',
-            fontWeight: '700',
-            color: 'var(--dark-navy)',
-            marginBottom: '4px',
-          }}
-        >
-          Manage Bookings
-        </h1>
-        <p
-          style={{
+            height: '44px',
+            borderRadius: '10px',
+            backgroundColor: 'var(--primary-blue)',
+            color: 'white',
             fontSize: '14px',
-            color: 'var(--text-secondary)',
+            fontWeight: '600',
           }}
         >
-          View and manage all test bookings
-        </p>
+          <Plus size={20} />
+          Add New Booking
+        </button>
       </div>
 
       {/* Filters */}
@@ -298,11 +318,12 @@ export function AdminBookings() {
                     <td className="px-6 py-4">
                       <div className="flex items-center justify-center">
                         <button
+                          onClick={() => navigate(`/admin/bookings/edit/${booking.id}`)}
                           className="p-2 rounded-lg transition-all duration-200 hover:bg-blue-50"
                           style={{
                             color: 'var(--primary-blue)',
                           }}
-                          title="View Details"
+                          title="View Details & Edit Status"
                         >
                           <Eye size={18} />
                         </button>
