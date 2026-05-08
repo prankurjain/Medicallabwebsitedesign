@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router';
 import { Menu, X } from 'lucide-react';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +27,7 @@ export function Navigation() {
       >
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 lg:px-20 h-full flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <div
               className="w-10 h-10 rounded-full flex items-center justify-center"
               style={{
@@ -66,33 +68,69 @@ export function Navigation() {
             >
               PATHKIND LAB
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-9">
-            {['Tests', 'Packages', 'Contact'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="transition-colors duration-200"
-                style={{
-                  color: isScrolled ? 'var(--dark-navy)' : 'white',
-                  fontSize: '15px',
-                  fontWeight: '400',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--teal-accent)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = isScrolled
-                    ? 'var(--dark-navy)'
-                    : 'white';
-                }}
-              >
-                {item}
-              </a>
-            ))}
+            <Link
+              to="/#tests"
+              className="transition-colors duration-200"
+              style={{
+                color: isScrolled ? 'var(--dark-navy)' : 'white',
+                fontSize: '15px',
+                fontWeight: '400',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = 'var(--teal-accent)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isScrolled
+                  ? 'var(--dark-navy)'
+                  : 'white';
+              }}
+            >
+              Tests
+            </Link>
+            <Link
+              to="/#packages"
+              className="transition-colors duration-200"
+              style={{
+                color: isScrolled ? 'var(--dark-navy)' : 'white',
+                fontSize: '15px',
+                fontWeight: '400',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = 'var(--teal-accent)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isScrolled
+                  ? 'var(--dark-navy)'
+                  : 'white';
+              }}
+            >
+              Packages
+            </Link>
+            <Link
+              to="/contact"
+              className="transition-colors duration-200"
+              style={{
+                color: isScrolled ? 'var(--dark-navy)' : 'white',
+                fontSize: '15px',
+                fontWeight: '400',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = 'var(--teal-accent)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = isScrolled
+                  ? 'var(--dark-navy)'
+                  : 'white';
+              }}
+            >
+              Contact
+            </Link>
             <button
+              onClick={() => navigate('/login')}
               className="px-4 transition-all duration-200"
               style={{
                 height: '36px',
@@ -143,21 +181,54 @@ export function Navigation() {
             >
               <X size={24} />
             </button>
-            {['Tests', 'Packages', 'Contact', 'My Account'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="py-4 border-b"
-                style={{
-                  color: 'var(--dark-navy)',
-                  fontSize: '15px',
-                  borderColor: 'var(--border-color)',
-                }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+            <Link
+              to="/#tests"
+              className="py-4 border-b"
+              style={{
+                color: 'var(--dark-navy)',
+                fontSize: '15px',
+                borderColor: 'var(--border-color)',
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Tests
+            </Link>
+            <Link
+              to="/#packages"
+              className="py-4 border-b"
+              style={{
+                color: 'var(--dark-navy)',
+                fontSize: '15px',
+                borderColor: 'var(--border-color)',
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Packages
+            </Link>
+            <Link
+              to="/contact"
+              className="py-4 border-b"
+              style={{
+                color: 'var(--dark-navy)',
+                fontSize: '15px',
+                borderColor: 'var(--border-color)',
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            <Link
+              to="/login"
+              className="py-4 border-b"
+              style={{
+                color: 'var(--dark-navy)',
+                fontSize: '15px',
+                borderColor: 'var(--border-color)',
+              }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              My Account
+            </Link>
           </div>
         </>
       )}
